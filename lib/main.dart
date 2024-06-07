@@ -86,7 +86,7 @@ class ParImparState extends State<ParImpar> {
 
       changeScreen(1);
     } else {
-      throw const HttpException('Failed to register player');
+      throw const HttpException('Erro ao registrar jogador');
     }
   }
 
@@ -123,9 +123,9 @@ class ParImparState extends State<ParImpar> {
         var vencedor = json['vencedor'];
         var perdedor = json['perdedor'];
         if (winner['nomeusuario'] == nomeUsuario) {
-          resultadoApostaAtual = 'You win! You earned ${vencedor['valor']} pontos!';
+          resultadoApostaAtual = 'Você ganhou ${perdedor['valor']} pontos!';
         } else {
-          resultadoApostaAtual = 'You lose! You lost ${perdedor['valor']} pontos!';
+          resultadoApostaAtual = 'Você perdeu ${vencedor['valor']} pontos!';
         }
       }
 
@@ -145,7 +145,7 @@ class ParImparState extends State<ParImpar> {
 
       changeScreen(4);
     } else {
-      throw const HttpException('Failed to get bet');
+      throw const HttpException('Falha ao autenticar aposta');
     }
   }
 
